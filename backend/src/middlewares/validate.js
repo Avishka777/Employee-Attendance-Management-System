@@ -36,6 +36,24 @@ exports.updateUserSchema = [
     .withMessage('Invalid role specified')
 ];
 
+exports.checkInSchema = [
+  body('employeeId')
+    .trim()
+    .notEmpty()
+    .withMessage('Employee ID is required')
+    .matches(/^EMP\d{3}$/)
+    .withMessage('Invalid employee ID format')
+];
+
+exports.checkOutSchema = [
+  body('employeeId')
+    .trim()
+    .notEmpty()
+    .withMessage('Employee ID is required')
+    .matches(/^EMP\d{3}$/)
+    .withMessage('Invalid employee ID format')
+];
+
 // Validation middleware function
 exports.validate = (validations) => {
   return async (req, res, next) => {

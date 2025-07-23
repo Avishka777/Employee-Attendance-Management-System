@@ -16,3 +16,15 @@
 [2025-07-23 04:38:50.792 PM] [31merror[39m: 	[31mUser not found[39m
 [2025-07-23 04:39:58.376 PM] [31merror[39m: 	[31mUser not found[39m
 [2025-07-23 04:40:29.914 PM] [31merror[39m: 	[31mNot authorized to access this route[39m
+[2025-07-23 05:31:42.549 PM] [31merror[39m: 	[31mUser no longer exists[39m
+[2025-07-23 05:31:56.356 PM] [31merror[39m: 	[31mUser no longer exists[39m
+[2025-07-23 05:33:48.627 PM] [31merror[39m: 	[31mAlready checked in today[39m
+[2025-07-23 05:35:25.141 PM] [31merror[39m: 	[31mCast to ObjectId failed for value "EMP003" (type string) at path "_id" for model "User"[39m
+[2025-07-23 05:35:32.243 PM] [31merror[39m: 	[31mCast to ObjectId failed for value "EMP003" (type string) at path "_id" for model "User"[39m
+[2025-07-23 05:38:22.250 PM] [31merror[39m: 	[31mAlready checked in today[39m
+[2025-07-23 05:39:46.536 PM] [31merror[39m: 	[31mCast to ObjectId failed for value "EMP004" (type string) at path "_id" for model "User"[39m
+[2025-07-23 05:41:38.305 PM] [31merror[39m: 	[31mCast to ObjectId failed for value "EMP003" (type string) at path "_id" for model "User"[39m
+[2025-07-23 05:43:04.422 PM] [31merror[39m: 	[31mCast to ObjectId failed for value "EMP003" (type string) at path "_id" for model "User"[39m
+[2025-07-23 05:45:39.131 PM] [31merror[39m: 	[31mError connecting to MongoDB: querySrv ENOTFOUND _mongodb._tcp.employee-attendance-man.mbnyxek.mongodb.net[39m
+[2025-07-23 05:45:52.092 PM] [31merror[39m: 	[31mCast to ObjectId failed for value "EMP003" (type string) at path "_id" for model "User"[39m
+[2025-07-23 05:46:41.299 PM] [31merror[39m: 	[31mError connecting to MongoDB: querySrv ENOTFOUND _mongodb._tcp.employee-attendance-man.mbnyxek.mongodb.net[39m
