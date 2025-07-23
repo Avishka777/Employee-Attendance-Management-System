@@ -1,0 +1,181 @@
+[2025-07-23 01:20:32.015 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 01:20:33.112 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-00.mbnyxek.mongodb.net[39m
+[2025-07-23 01:22:49.853 PM] [31merror[39m: 	[31mCannot set property query of #<IncomingMessage> which has only a getter[39m
+[2025-07-23 01:23:17.852 PM] [31merror[39m: 	[31mCannot set property query of #<IncomingMessage> which has only a getter[39m
+[2025-07-23 01:23:53.689 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 01:23:54.596 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-01.mbnyxek.mongodb.net[39m
+[2025-07-23 01:23:56.629 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 01:23:57.396 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-00.mbnyxek.mongodb.net[39m
+[2025-07-23 01:23:58.684 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 01:23:59.428 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-01.mbnyxek.mongodb.net[39m
+[2025-07-23 01:24:07.704 PM] [31merror[39m: 	[31mCannot set property query of #<IncomingMessage> which has only a getter[39m
+[2025-07-23 01:24:21.749 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 01:24:22.546 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-02.mbnyxek.mongodb.net[39m
+[2025-07-23 01:24:53.181 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 01:24:53.984 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-00.mbnyxek.mongodb.net[39m
+[2025-07-23 01:24:57.701 PM] [32minfo[39m: 	[32m::1 - - [23/Jul/2025:07:54:57 +0000] "POST /api/auth/register HTTP/1.1" 201 514 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 01:25:08.359 PM] [32minfo[39m: 	[32m::1 - - [23/Jul/2025:07:55:08 +0000] "POST /api/auth/register HTTP/1.1" 201 506 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 01:25:16.635 PM] [32minfo[39m: 	[32m::1 - - [23/Jul/2025:07:55:16 +0000] "POST /api/auth/login HTTP/1.1" 200 494 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 01:25:22.550 PM] [31merror[39m: 	[31mCannot read properties of undefined (reading 'id')[39m
+[2025-07-23 01:25:22.551 PM] [32minfo[39m: 	[32m::1 - - [23/Jul/2025:07:55:22 +0000] "GET /api/auth/me HTTP/1.1" 500 1521 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 01:27:48.019 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 01:27:49.026 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-00.mbnyxek.mongodb.net[39m
+[2025-07-23 03:46:14.094 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 03:46:15.003 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-02.mbnyxek.mongodb.net[39m
+[2025-07-23 03:46:23.913 PM] [31merror[39m: 	[31mCannot read properties of undefined (reading 'id')[39m
+[2025-07-23 03:46:23.918 PM] [32minfo[39m: 	[32m::1 - - [23/Jul/2025:10:16:23 +0000] "GET /api/auth/me HTTP/1.1" 500 1521 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 03:46:31.131 PM] [32minfo[39m: 	[32m::1 - - [23/Jul/2025:10:16:31 +0000] "POST /api/auth/login HTTP/1.1" 200 494 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 03:46:49.215 PM] [31merror[39m: 	[31mCannot read properties of undefined (reading 'id')[39m
+[2025-07-23 03:46:49.217 PM] [32minfo[39m: 	[32m::1 - - [23/Jul/2025:10:16:49 +0000] "GET /api/auth/me HTTP/1.1" 500 1521 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 03:46:58.282 PM] [31merror[39m: 	[31mEmail already in use[39m
+[2025-07-23 03:46:58.283 PM] [32minfo[39m: 	[32m::1 - - [23/Jul/2025:10:16:58 +0000] "POST /api/auth/register HTTP/1.1" 400 299 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 03:47:22.762 PM] [32minfo[39m: 	[32m::1 - - [23/Jul/2025:10:17:22 +0000] "POST /api/auth/login HTTP/1.1" 200 502 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 03:47:33.704 PM] [31merror[39m: 	[31mCannot read properties of undefined (reading 'id')[39m
+[2025-07-23 03:47:33.705 PM] [32minfo[39m: 	[32m::1 - - [23/Jul/2025:10:17:33 +0000] "GET /api/auth/me HTTP/1.1" 500 1521 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 03:48:28.880 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 03:48:29.944 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-02.mbnyxek.mongodb.net[39m
+[2025-07-23 03:48:48.369 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 03:48:49.279 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-02.mbnyxek.mongodb.net[39m
+[2025-07-23 03:49:06.040 PM] [32minfo[39m: 	[32m::1 - - [23/Jul/2025:10:19:06 +0000] "GET /api/auth/me HTTP/1.1" 200 298 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 03:53:28.268 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 03:53:29.615 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-00.mbnyxek.mongodb.net[39m
+[2025-07-23 03:53:51.801 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 03:53:52.723 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-02.mbnyxek.mongodb.net[39m
+[2025-07-23 03:53:53.937 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 03:53:54.788 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-02.mbnyxek.mongodb.net[39m
+[2025-07-23 03:54:08.878 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 03:54:09.799 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-00.mbnyxek.mongodb.net[39m
+[2025-07-23 03:54:16.054 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 03:54:16.960 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-01.mbnyxek.mongodb.net[39m
+[2025-07-23 03:54:29.735 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 03:54:30.640 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-00.mbnyxek.mongodb.net[39m
+[2025-07-23 03:54:33.785 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 03:54:34.683 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-01.mbnyxek.mongodb.net[39m
+[2025-07-23 03:54:48.406 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 03:54:49.324 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-01.mbnyxek.mongodb.net[39m
+[2025-07-23 04:25:59.582 PM] [31merror[39m: 	[31mEmail already in use[39m
+[2025-07-23 04:25:59.586 PM] [32minfo[39m: 	[32m::1 - - [23/Jul/2025:10:55:59 +0000] "POST /api/auth/register HTTP/1.1" 400 299 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 04:26:04.434 PM] [32minfo[39m: 	[32m::1 - - [23/Jul/2025:10:56:04 +0000] "POST /api/auth/register HTTP/1.1" 201 583 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 04:26:35.490 PM] [32minfo[39m: 	[32m::1 - - [23/Jul/2025:10:56:35 +0000] "POST /api/auth/register HTTP/1.1" 201 596 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 04:26:39.592 PM] [31merror[39m: 	[31mUser validation failed: birthday: Path `birthday` is required., gender: Path `gender` is required.[39m
+[2025-07-23 04:26:39.593 PM] [32minfo[39m: 	[32m::1 - - [23/Jul/2025:10:56:39 +0000] "POST /api/auth/login HTTP/1.1" 500 713 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 04:27:05.390 PM] [32minfo[39m: 	[32m::1 - - [23/Jul/2025:10:57:05 +0000] "POST /api/auth/login HTTP/1.1" 200 584 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 04:27:39.780 PM] [32minfo[39m: 	[32m::1 - - [23/Jul/2025:10:57:39 +0000] "GET /api/auth/me HTTP/1.1" 200 298 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 04:30:18.256 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:30:19.409 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-02.mbnyxek.mongodb.net[39m
+[2025-07-23 04:30:38.689 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:30:39.705 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-02.mbnyxek.mongodb.net[39m
+[2025-07-23 04:30:50.211 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:30:51.410 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-02.mbnyxek.mongodb.net[39m
+[2025-07-23 04:31:15.331 PM] [32minfo[39m: 	[32m::1 - - [23/Jul/2025:11:01:15 +0000] "DELETE /api/user/6880bfe3a3d836b32dc228e8 HTTP/1.1" 404 175 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 04:31:38.572 PM] [31merror[39m: 	[31mUser no longer exists[39m
+[2025-07-23 04:31:38.575 PM] [32minfo[39m: 	[32m::1 - - [23/Jul/2025:11:01:38 +0000] "DELETE /api/users/6880bfe3a3d836b32dc228e8 HTTP/1.1" 401 289 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 04:31:51.849 PM] [32minfo[39m: 	[32m::1 - - [23/Jul/2025:11:01:51 +0000] "POST /api/auth/login HTTP/1.1" 200 584 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 04:32:03.641 PM] [31merror[39m: 	[31mUser no longer exists[39m
+[2025-07-23 04:32:03.642 PM] [32minfo[39m: 	[32m::1 - - [23/Jul/2025:11:02:03 +0000] "DELETE /api/users/6880bfe3a3d836b32dc228e8 HTTP/1.1" 401 289 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 04:33:54.830 PM] [31merror[39m: 	[31mNot authorized to access this route[39m
+[2025-07-23 04:33:54.831 PM] [32minfo[39m: 	[32m::1 - - [23/Jul/2025:11:03:54 +0000] "GET /api/users HTTP/1.1" 401 1478 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 04:34:22.632 PM] [31merror[39m: 	[31mNot authorized to access this route[39m
+[2025-07-23 04:34:22.633 PM] [32minfo[39m: 	[32m::1 - - [23/Jul/2025:11:04:22 +0000] "GET /api/users HTTP/1.1" 403 702 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 04:34:42.342 PM] [32minfo[39m: 	[32m::1 - - [23/Jul/2025:11:04:42 +0000] "POST /api/auth/register HTTP/1.1" 201 585 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 04:34:56.525 PM] [32minfo[39m: 	[32m::1 - - [23/Jul/2025:11:04:56 +0000] "GET /api/users HTTP/1.1" 200 693 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 04:35:42.682 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:35:43.622 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-01.mbnyxek.mongodb.net[39m
+[2025-07-23 04:35:45.588 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:35:46.446 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-01.mbnyxek.mongodb.net[39m
+[2025-07-23 04:35:49.535 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:35:50.342 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-02.mbnyxek.mongodb.net[39m
+[2025-07-23 04:35:54.671 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:35:55.580 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-02.mbnyxek.mongodb.net[39m
+[2025-07-23 04:36:01.039 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:36:01.891 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-02.mbnyxek.mongodb.net[39m
+[2025-07-23 04:36:23.735 PM] [31merror[39m: 	[31mNot authorized to access this route[39m
+[2025-07-23 04:36:23.737 PM] [32minfo[39m: 	[32m::1 - - [23/Jul/2025:11:06:23 +0000] "GET /api/users/6880bfe3a3d836b32dc228e8 HTTP/1.1" 401 1468 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 04:36:30.816 PM] [32minfo[39m: 	[32m::1 - - [23/Jul/2025:11:06:30 +0000] "GET /api/users/6880bfe3a3d836b32dc228e8 HTTP/1.1" 200 380 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 04:37:41.420 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:37:42.230 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-02.mbnyxek.mongodb.net[39m
+[2025-07-23 04:38:14.645 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:38:15.487 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-00.mbnyxek.mongodb.net[39m
+[2025-07-23 04:38:20.001 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:38:20.811 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-00.mbnyxek.mongodb.net[39m
+[2025-07-23 04:38:48.296 PM] [32minfo[39m: 	[32m::1 - - [23/Jul/2025:11:08:48 +0000] "DELETE /api/users/6880bfe3a3d836b32dc228e8 HTTP/1.1" 200 54 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 04:38:50.792 PM] [31merror[39m: 	[31mUser not found[39m
+[2025-07-23 04:38:50.794 PM] [32minfo[39m: 	[32m::1 - - [23/Jul/2025:11:08:50 +0000] "DELETE /api/users/6880bfe3a3d836b32dc228e8 HTTP/1.1" 404 289 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 04:39:10.040 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:39:10.925 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-00.mbnyxek.mongodb.net[39m
+[2025-07-23 04:39:58.376 PM] [31merror[39m: 	[31mUser not found[39m
+[2025-07-23 04:39:58.379 PM] [32minfo[39m: 	[32m::1 - - [23/Jul/2025:11:09:58 +0000] "GET /api/users/6880bfe3a3d836b32dc228e8 HTTP/1.1" 404 286 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 04:40:01.527 PM] [32minfo[39m: 	[32m::1 - - [23/Jul/2025:11:10:01 +0000] "GET /api/users HTTP/1.1" 200 376 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 04:40:29.914 PM] [31merror[39m: 	[31mNot authorized to access this route[39m
+[2025-07-23 04:40:29.915 PM] [32minfo[39m: 	[32m::1 - - [23/Jul/2025:11:10:29 +0000] "PUT /api/users/6880c1ca556523ac9ba8fe20 HTTP/1.1" 401 1468 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 04:40:53.016 PM] [32minfo[39m: 	[32m::1 - - [23/Jul/2025:11:10:53 +0000] "PUT /api/users/6880c1ca556523ac9ba8fe20 HTTP/1.1" 200 364 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 04:51:25.806 PM] [32minfo[39m: 	[32m::1 - - [23/Jul/2025:11:21:25 +0000] "PUT /api/users/6880c1ca556523ac9ba8fe20/deactivate HTTP/1.1" 200 369 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 04:51:28.829 PM] [32minfo[39m: 	[32m::1 - - [23/Jul/2025:11:21:28 +0000] "PUT /api/users/6880c1ca556523ac9ba8fe20/deactivate HTTP/1.1" 200 369 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 04:54:04.351 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:54:05.632 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-01.mbnyxek.mongodb.net[39m
+[2025-07-23 04:54:06.215 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:54:07.318 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:54:08.362 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-00.mbnyxek.mongodb.net[39m
+[2025-07-23 04:54:10.812 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:54:11.741 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-00.mbnyxek.mongodb.net[39m
+[2025-07-23 04:54:13.910 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:54:14.830 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-00.mbnyxek.mongodb.net[39m
+[2025-07-23 04:54:18.984 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:54:20.130 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-00.mbnyxek.mongodb.net[39m
+[2025-07-23 04:54:25.665 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:54:26.609 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-00.mbnyxek.mongodb.net[39m
+[2025-07-23 04:54:30.716 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:54:31.989 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-00.mbnyxek.mongodb.net[39m
+[2025-07-23 04:54:33.407 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:54:34.387 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-00.mbnyxek.mongodb.net[39m
+[2025-07-23 04:54:44.872 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:54:45.810 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-00.mbnyxek.mongodb.net[39m
+[2025-07-23 04:54:50.005 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:54:51.361 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:54:52.368 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-00.mbnyxek.mongodb.net[39m
+[2025-07-23 04:54:56.634 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:54:57.632 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:54:58.540 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-00.mbnyxek.mongodb.net[39m
+[2025-07-23 04:55:05.130 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:55:07.422 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:55:08.630 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:55:09.645 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-02.mbnyxek.mongodb.net[39m
+[2025-07-23 04:55:13.151 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:55:14.485 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-02.mbnyxek.mongodb.net[39m
+[2025-07-23 04:55:16.102 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:55:17.110 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-02.mbnyxek.mongodb.net[39m
+[2025-07-23 04:55:17.729 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:55:19.211 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-02.mbnyxek.mongodb.net[39m
+[2025-07-23 04:55:20.145 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:55:21.786 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:55:22.784 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-02.mbnyxek.mongodb.net[39m
+[2025-07-23 04:55:26.116 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:55:27.371 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-02.mbnyxek.mongodb.net[39m
+[2025-07-23 04:55:39.147 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:55:40.084 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-02.mbnyxek.mongodb.net[39m
+[2025-07-23 04:56:13.007 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:56:14.002 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-00.mbnyxek.mongodb.net[39m
+[2025-07-23 04:56:17.089 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:56:18.004 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-00.mbnyxek.mongodb.net[39m
+[2025-07-23 04:56:21.708 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:56:22.661 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-00.mbnyxek.mongodb.net[39m
+[2025-07-23 04:56:46.185 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:56:47.523 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-00.mbnyxek.mongodb.net[39m
+[2025-07-23 04:56:54.763 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:56:57.791 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-00.mbnyxek.mongodb.net[39m
+[2025-07-23 04:57:02.946 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:57:05.137 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:57:06.138 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:57:07.010 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-00.mbnyxek.mongodb.net[39m
+[2025-07-23 04:57:09.611 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:57:10.784 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-00.mbnyxek.mongodb.net[39m
+[2025-07-23 04:57:33.134 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:57:34.180 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-00.mbnyxek.mongodb.net[39m
+[2025-07-23 04:57:37.286 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:57:38.271 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-00.mbnyxek.mongodb.net[39m
+[2025-07-23 04:57:42.280 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:57:43.265 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-00.mbnyxek.mongodb.net[39m
+[2025-07-23 04:57:54.205 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:57:55.175 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-00.mbnyxek.mongodb.net[39m
+[2025-07-23 04:57:55.786 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 04:57:56.889 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-00.mbnyxek.mongodb.net[39m
