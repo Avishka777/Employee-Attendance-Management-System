@@ -562,3 +562,26 @@
 [2025-07-24 03:24:23.142 PM] [31merror[39m: 	[31mAlready checked in today[39m
 [2025-07-24 03:24:23.143 PM] [32minfo[39m: 	[32m::1 - - [24/Jul/2025:09:54:23 +0000] "POST /api/attendance/check-in HTTP/1.1" 400 312 "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"[39m
 [2025-07-24 03:25:25.782 PM] [32minfo[39m: 	[32m::1 - - [24/Jul/2025:09:55:25 +0000] "POST /api/auth/login HTTP/1.1" 200 581 "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"[39m
+[2025-07-24 03:39:48.062 PM] [32minfo[39m: 	[32mServer running in test mode on port 5000[39m
+[2025-07-24 03:39:49.009 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-01.mbnyxek.mongodb.net[39m
+[2025-07-24 03:41:29.622 PM] [32minfo[39m: 	[32mServer running in test mode on port 5000[39m
+[2025-07-24 03:41:30.409 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-02.mbnyxek.mongodb.net[39m
+[2025-07-24 03:43:13.455 PM] [32minfo[39m: 	[32mServer running in test mode on port 5000[39m
+[2025-07-24 03:43:14.367 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-02.mbnyxek.mongodb.net[39m
+[2025-07-24 03:44:37.210 PM] [32minfo[39m: 	[32mServer running in test mode on port 5000[39m
+[2025-07-24 03:44:38.193 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-02.mbnyxek.mongodb.net[39m
+[2025-07-24 04:27:23.479 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-24 04:27:24.483 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-00.mbnyxek.mongodb.net[39m
+[2025-07-24 04:28:05.311 PM] [31merror[39m: 	[31mEmployee not found[39m
+[2025-07-24 04:28:05.314 PM] [32minfo[39m: 	[32m::1 - - [24/Jul/2025:10:58:05 +0000] "POST /api/attendance/check-in HTTP/1.1" 404 300 "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"[39m
+[2025-07-24 04:28:11.004 PM] [31merror[39m: 	[31mEmployee not found[39m
+[2025-07-24 04:28:11.005 PM] [32minfo[39m: 	[32m::1 - - [24/Jul/2025:10:58:11 +0000] "POST /api/attendance/check-in HTTP/1.1" 404 300 "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"[39m
+[2025-07-24 04:28:31.353 PM] [31merror[39m: 	[31mInvalid credentials[39m
+[2025-07-24 04:28:31.354 PM] [32minfo[39m: 	[32m::1 - - [24/Jul/2025:10:58:31 +0000] "POST /api/auth/login HTTP/1.1" 401 294 "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"[39m
+[2025-07-24 04:28:45.150 PM] [31merror[39m: 	[31mInvalid credentials[39m
+[2025-07-24 04:28:45.150 PM] [32minfo[39m: 	[32m::1 - - [24/Jul/2025:10:58:45 +0000] "POST /api/auth/login HTTP/1.1" 401 294 "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"[39m
+[2025-07-24 04:28:55.713 PM] [31merror[39m: 	[31mInvalid credentials[39m
+[2025-07-24 04:28:55.715 PM] [32minfo[39m: 	[32m::1 - - [24/Jul/2025:10:58:55 +0000] "POST /api/auth/login HTTP/1.1" 401 294 "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"[39m
+[2025-07-24 04:29:26.059 PM] [32minfo[39m: 	[32m::1 - - [24/Jul/2025:10:59:26 +0000] "POST /api/auth/register HTTP/1.1" 201 611 "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"[39m
+[2025-07-24 04:29:29.791 PM] [32minfo[39m: 	[32m::1 - - [24/Jul/2025:10:59:29 +0000] "POST /api/auth/login HTTP/1.1" 200 599 "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"[39m
+[2025-07-24 04:29:36.345 PM] [32minfo[39m: 	[32m::1 - - [24/Jul/2025:10:59:36 +0000] "POST /api/attendance/check-in HTTP/1.1" 201 292 "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"[39m

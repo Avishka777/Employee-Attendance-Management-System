@@ -8,37 +8,46 @@ const path = require('path');
 const logger = require('./config/logger');
 const connectDB = require('./config/db');
 
-require('dotenv').config();
-connectDB();
+// Load env vars only if not in test environment
+if (process.env.NODE_ENV !== 'test') {
+  require('dotenv').config();
+  connectDB();
+}
 
 const app = express();
 
-// Fixed middleware order
+// Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(mongoSanitize()); 
+app.use(mongoSanitize());
 app.use(cors());
 app.use(helmet());
-app.use(morgan('combined', { stream: logger.stream }));
 
-// Rate limiting
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100 // limit each IP to 100 requests per windowMs
-});
-app.use(limiter);
+// Skip morgan in test environment
+if (process.env.NODE_ENV !== 'test') {
+  app.use(morgan('combined', { stream: logger.stream }));
+}
+
+// Rate limiting (disabled in test environment)
+if (process.env.NODE_ENV !== 'test') {
+  const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 100
+  });
+  app.use(limiter);
+}
 
 // Routes
 app.use('/api/auth', require('./routes/auth.routes'));
 app.use('/api/users', require('./routes/user.routes'));
 app.use('/api/attendance', require('./routes/attendance.routes'));
 
-// Error handling middleware
+// Error handling
 const { errorConverter, errorHandler } = require('./middlewares/error');
 app.use(errorConverter);
 app.use(errorHandler);
 
-// Serve static files in production
+// Serve static files in production only
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
   app.get('*', (req, res) => {
@@ -46,18 +55,18 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-const PORT = process.env.PORT || 5000;
+// Only start server if not in test environment
+let server;
+if (process.env.NODE_ENV !== 'test') {
+  const PORT = process.env.PORT || 5000;
+  server = app.listen(PORT, () => {
+    logger.info(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
+  });
 
-const server = app.listen(
-  PORT,
-  logger.info(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`)
-);
-
-// Handle unhandled promise rejections
-process.on('unhandledRejection', (err, promise) => {
-  logger.error(`Error: ${err.message}`);
-  // Close server & exit process
-  server.close(() => process.exit(1));
-});
+  process.on('unhandledRejection', (err, promise) => {
+    logger.error(`Error: ${err.message}`);
+    server.close(() => process.exit(1));
+  });
+}
 
 module.exports = app;
