@@ -68,13 +68,13 @@ A RESTful API for managing employee attendance with user authentication, check-i
 1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/employee-attendance-system.git
-   cd employee-attendance-system/backend
 
-2. Install dependencies:
+2. Install dependencies for backend:
    ```bash
+   cd backend
    npm install
 
-3. Create a .env file in the root directory:
+3. Create a .env file in the backend root directory:
    ```env
    NODE_ENV=development
    PORT=5000
@@ -82,7 +82,16 @@ A RESTful API for managing employee attendance with user authentication, check-i
    JWT_SECRET=your_jwt_secret_here
    JWT_EXPIRE=30d
 
-4. Start the development server:
+4. Start the backend development server:
+   ```bash
+   npm run dev
+
+5. Install dependencies for frontend:
+   ```bash
+   cd frontend
+   npm install -f
+
+6. Start the frontend development server:
    ```bash
    npm run dev
 
@@ -100,6 +109,7 @@ A RESTful API for managing employee attendance with user authentication, check-i
 
 1. Run unit tests:
    ```bash
+   cd backend
    npm test
 
 ## License
