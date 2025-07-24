@@ -28,3 +28,9 @@
 [2025-07-23 05:45:39.131 PM] [31merror[39m: 	[31mError connecting to MongoDB: querySrv ENOTFOUND _mongodb._tcp.employee-attendance-man.mbnyxek.mongodb.net[39m
 [2025-07-23 05:45:52.092 PM] [31merror[39m: 	[31mCast to ObjectId failed for value "EMP003" (type string) at path "_id" for model "User"[39m
 [2025-07-23 05:46:41.299 PM] [31merror[39m: 	[31mError connecting to MongoDB: querySrv ENOTFOUND _mongodb._tcp.employee-attendance-man.mbnyxek.mongodb.net[39m
+[2025-07-23 01:03:33.998 PM] [31merror[39m: 	[31mcommand find requires authentication[39m
+[2025-07-23 01:03:50.737 PM] [31merror[39m: 	[31mcommand find requires authentication[39m
+[2025-07-23 01:10:31.987 PM] [31merror[39m: 	[31mEmail already in use[39m
+[2025-07-23 01:13:06.755 PM] [31merror[39m: 	[31mUser no longer exists[39m
+[2025-07-23 01:13:29.957 PM] [31merror[39m: 	[31mUser no longer exists[39m
+[2025-07-23 01:14:13.679 PM] [31merror[39m: 	[31mEmployee not found[39m

@@ -287,3 +287,23 @@
 [2025-07-23 05:55:59.158 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-00.mbnyxek.mongodb.net[39m
 [2025-07-23 05:56:08.388 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
 [2025-07-23 05:56:09.889 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-02.mbnyxek.mongodb.net[39m
+[2025-07-23 01:02:27.242 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 01:02:29.771 PM] [32minfo[39m: 	[32mMongoDB Connected: mongo[39m
+[2025-07-23 01:03:33.998 PM] [31merror[39m: 	[31mcommand find requires authentication[39m
+[2025-07-23 01:03:34.002 PM] [32minfo[39m: 	[32m::ffff:172.18.0.1 - - [23/Jul/2025:13:03:34 +0000] "POST /api/auth/register HTTP/1.1" 500 1063 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 01:03:50.737 PM] [31merror[39m: 	[31mcommand find requires authentication[39m
+[2025-07-23 01:03:50.738 PM] [32minfo[39m: 	[32m::ffff:172.18.0.1 - - [23/Jul/2025:13:03:50 +0000] "POST /api/auth/register HTTP/1.1" 500 1063 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 01:10:16.567 PM] [32minfo[39m: 	[32mServer running in development mode on port 5000[39m
+[2025-07-23 01:10:17.642 PM] [32minfo[39m: 	[32mMongoDB Connected: ac-iaswbto-shard-00-00.mbnyxek.mongodb.net[39m
+[2025-07-23 01:10:23.600 PM] [32minfo[39m: 	[32m::ffff:172.18.0.1 - - [23/Jul/2025:13:10:23 +0000] "POST /api/auth/register HTTP/1.1" 201 613 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 01:10:31.987 PM] [31merror[39m: 	[31mEmail already in use[39m
+[2025-07-23 01:10:31.988 PM] [32minfo[39m: 	[32m::ffff:172.18.0.1 - - [23/Jul/2025:13:10:31 +0000] "POST /api/auth/register HTTP/1.1" 400 239 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 01:13:06.755 PM] [31merror[39m: 	[31mUser no longer exists[39m
+[2025-07-23 01:13:06.757 PM] [32minfo[39m: 	[32m::ffff:172.18.0.1 - - [23/Jul/2025:13:13:06 +0000] "POST /api/attendance/check-in HTTP/1.1" 401 229 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 01:13:29.957 PM] [31merror[39m: 	[31mUser no longer exists[39m
+[2025-07-23 01:13:29.958 PM] [32minfo[39m: 	[32m::ffff:172.18.0.1 - - [23/Jul/2025:13:13:29 +0000] "POST /api/attendance/check-in HTTP/1.1" 401 229 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 01:14:00.579 PM] [32minfo[39m: 	[32m::ffff:172.18.0.1 - - [23/Jul/2025:13:14:00 +0000] "POST /api/auth/login HTTP/1.1" 200 601 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 01:14:13.679 PM] [31merror[39m: 	[31mEmployee not found[39m
+[2025-07-23 01:14:13.680 PM] [32minfo[39m: 	[32m::ffff:172.18.0.1 - - [23/Jul/2025:13:14:13 +0000] "POST /api/attendance/check-in HTTP/1.1" 404 240 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 01:14:52.719 PM] [32minfo[39m: 	[32m::ffff:172.18.0.1 - - [23/Jul/2025:13:14:52 +0000] "POST /api/auth/register HTTP/1.1" 201 614 "-" "PostmanRuntime/7.44.1"[39m
+[2025-07-23 01:15:01.858 PM] [32minfo[39m: 	[32m::ffff:172.18.0.1 - - [23/Jul/2025:13:15:01 +0000] "POST /api/attendance/check-in HTTP/1.1" 201 292 "-" "PostmanRuntime/7.44.1"[39m

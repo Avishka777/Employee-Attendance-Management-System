@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=development
+      - PORT=5000
+      - MONGO_URI=${MONGO_URI}
+      - JWT_SECRET=your_jwt_secret
+      - JWT_EXPIRE=30d
+    depends_on:
+      - mongo
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    networks:
+      - attendance-net
+
+  mongo:
+    image: mongo:6.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    networks:
+      - attendance-net
+
+volumes:
+  mongo-data:
+
+networks:
+  attendance-net:
+    driver: bridge
