@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const userService = {
+  // Get all users
   getAllUsers: async (token) => {
     try {
       const response = await axios.get(
@@ -21,6 +22,7 @@ const userService = {
       );
     }
   },
+  
   // Update user profile
   updateProfile: async (userId, userData, token) => {
     try {

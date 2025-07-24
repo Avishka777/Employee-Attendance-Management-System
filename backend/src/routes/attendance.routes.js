@@ -6,10 +6,10 @@ const { validate } = require('../middlewares/validate');
 const { checkInSchema, checkOutSchema } = require('../middlewares/validate');
 
 // Check In
-router.post('/check-in', protect, validate(checkInSchema), attendanceController.checkIn);
+router.post('/check-in', validate(checkInSchema), attendanceController.checkIn);
 
 // Check Out
-router.post('/check-out', protect, validate(checkOutSchema), attendanceController.checkOut);
+router.post('/check-out', validate(checkOutSchema), attendanceController.checkOut);
 
 // Get My Attendance
 router.get('/me', protect, attendanceController.getMyAttendance);

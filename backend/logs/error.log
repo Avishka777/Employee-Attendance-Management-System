@@ -34,3 +34,24 @@
 [2025-07-23 01:13:06.755 PM] [31merror[39m: 	[31mUser no longer exists[39m
 [2025-07-23 01:13:29.957 PM] [31merror[39m: 	[31mUser no longer exists[39m
 [2025-07-23 01:14:13.679 PM] [31merror[39m: 	[31mEmployee not found[39m
+[2025-07-24 10:24:45.067 AM] [31merror[39m: 	[31mUser no longer exists[39m
+[2025-07-24 10:24:53.217 AM] [31merror[39m: 	[31mEmail already in use[39m
+[2025-07-24 10:25:18.784 AM] [31merror[39m: 	[31mUser no longer exists[39m
+[2025-07-24 10:25:31.924 AM] [31merror[39m: 	[31mUser no longer exists[39m
+[2025-07-24 10:41:44.394 AM] [31merror[39m: 	[31mUser no longer exists[39m
+[2025-07-24 10:41:50.311 AM] [31merror[39m: 	[31mUser validation failed: birthday: Cast to date failed for value "Invalid Date" (type Date) at path "birthday", gender: Path `gender` is required.[39m
+[2025-07-24 10:42:16.292 AM] [31merror[39m: 	[31mPassword must be at least 8 characters[39m
+[2025-07-24 10:44:42.614 AM] [31merror[39m: 	[31mNot authorized to access this route[39m
+[2025-07-24 10:44:51.654 AM] [31merror[39m: 	[31mNot authorized to access this route[39m
+[2025-07-24 10:50:35.197 AM] [31merror[39m: 	[31mUser not found[39m
+[2025-07-24 11:12:13.848 AM] [31merror[39m: 	[31mUser no longer exists[39m
+[2025-07-24 11:12:29.121 AM] [31merror[39m: 	[31mUser no longer exists[39m
+[2025-07-24 11:12:50.567 AM] [31merror[39m: 	[31mUser no longer exists[39m
+[2025-07-24 11:13:25.037 AM] [31merror[39m: 	[31mUser no longer exists[39m
+[2025-07-24 11:13:32.078 AM] [31merror[39m: 	[31mUser no longer exists[39m
+[2025-07-24 11:13:37.599 AM] [31merror[39m: 	[31mUser no longer exists[39m
+[2025-07-24 11:13:41.457 AM] [31merror[39m: 	[31mUser no longer exists[39m
+[2025-07-24 11:13:46.691 AM] [31merror[39m: 	[31mUser no longer exists[39m
+[2025-07-24 11:13:50.781 AM] [31merror[39m: 	[31mUser no longer exists[39m
+[2025-07-24 11:13:55.420 AM] [31merror[39m: 	[31mUser no longer exists[39m
+[2025-07-24 11:14:19.242 AM] [31merror[39m: 	[31mUser no longer exists[39m

@@ -9,6 +9,7 @@ export function DashboardSidebar() {
 
   const menuItems = [
     { name: "All Users", path: "/dashboard/users", icon: FaUsers },
+    { name: "Attendance", path: "/dashboard/attendance", icon: FaUsers },
     { name: "Sign In", path: "/sign-in", icon: HiArrowSmRight },
   ];
 

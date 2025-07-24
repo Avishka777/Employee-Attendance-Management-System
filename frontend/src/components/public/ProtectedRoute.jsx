@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-import { Navigate, Outlet, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { Navigate, Outlet, useLocation } from "react-router-dom";
 
 const ProtectedRoute = ({ allowedRoles }) => {
   const user = useSelector((state) => state.auth.user);

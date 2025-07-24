@@ -28,9 +28,9 @@ export default function HeaderComponent() {
   return (
     <Navbar fluid rounded className="bg-white dark:bg-gray-800 shadow-md">
       <Navbar.Brand href="#">
-        <img src={logo} className="mr-3 h-6 sm:h-9" alt="TALENT TREK LOGO" />
+        <img src={logo} className="mr-3 h-6 sm:h-9" alt="EMPLOYEE ATTENDANCE LOGO" />
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-          TALENT TREK
+          EMPLOYEE ATTENDANCE
         </span>
       </Navbar.Brand>
       <div className="flex md:order-2 items-center gap-4">

@@ -1,5 +1,5 @@
-import { Footer } from "flowbite-react";
 import logo from "../../assets/public/logo.png";
+import { Footer } from "flowbite-react";
 
 export default function FooterComponent() {
   return (
@@ -9,8 +9,8 @@ export default function FooterComponent() {
           <Footer.Brand
             href="#"
             src={logo}
-            name="TALENT TREK"
-            alt="TALENT TREK LOGO"
+            name="EMPLOYEE ATTENDANCE"
+            alt="EMPLOYEE ATTENDANCE LOGO"
           />
           <Footer.LinkGroup>
             <Footer.Link href="#">About</Footer.Link>
@@ -20,7 +20,7 @@ export default function FooterComponent() {
           </Footer.LinkGroup>
         </div>
         <Footer.Divider />
-        <Footer.Copyright href="#" by="TALENT TREK CORPORATION" year={2025} />
+        <Footer.Copyright href="#" by="EMPLOYEE ATTENDANCE CORPORATION" year={2025} />
       </div>
     </Footer>
   );
