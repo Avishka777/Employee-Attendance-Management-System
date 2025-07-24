@@ -3,7 +3,7 @@ import logo from "../../assets/public/logo.png";
 
 export default function FooterComponent() {
   return (
-    <Footer container>
+    <Footer container className="bg-white dark:bg-gray-800 shadow-md">
       <div className="w-full text-center">
         <div className="w-full justify-between sm:flex sm:items-center sm:justify-between">
           <Footer.Brand

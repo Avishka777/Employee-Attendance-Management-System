@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { HiEye, HiEyeOff } from "react-icons/hi";
 import { Link, useNavigate } from "react-router-dom";
-import { Alert, Button, Label } from "flowbite-react";
+import { Button, Label } from "flowbite-react";
 import { TextInput, Select, Spinner } from "flowbite-react";
 import Swal from "sweetalert2";
 import logo from "../../assets/public/logo.png";
-import userService from "../../services/userService";
+import authService from "../../services/authService";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -19,60 +19,77 @@ const SignUp = () => {
     email: "",
     password: "",
     confirmPassword: "",
-    profileType: "Job Seeker",
+    profileType: "employee",
+    gender: "male",
+    birthday: "",
   });
 
-  // Handle Input Field Changes and Update State
   const handleChange = (e) => {
     const { id, value } = e.target;
     setFormData({ ...formData, [id]: value });
-    // Validate Password Match in Real Time
+
     if (formSubmitted && (id === "confirmPassword" || id === "password")) {
       setPasswordMatchError(
-        value !== formData.password ? "Passwords do not match!" : ""
+        id === "password" && value !== formData.confirmPassword
+          ? "Passwords do not match!"
+          : id === "confirmPassword" && value !== formData.password
+          ? "Passwords do not match!"
+          : ""
       );
     }
   };
 
-  // Handle Form Submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setFormSubmitted(true);
+
+    if (!formData.birthday) {
+      Swal.fire({
+        title: "Missing Information",
+        text: "Please select your birthday",
+        icon: "warning",
+        confirmButtonText: "OK",
+      });
+      return;
+    }
+
     if (formData.password !== formData.confirmPassword) {
       setPasswordMatchError("Passwords do not match!");
       return;
     }
+
     setLoading(true);
+
     try {
-      const response = await userService.register({
+      const response = await authService.register({
         fullName: formData.fullName,
         email: formData.email,
         password: formData.password,
         profileType: formData.profileType,
+        gender: formData.gender,
+        birthday: formData.birthday,
       });
+
       if (!response.success) {
-        return Swal.fire({
-          title: "Registration Failed",
-          text: response.message || "Something Went Wrong.",
-          confirmButtonText: "OK",
-          confirmButtonColor: "red",
-        });
+        throw new Error(response.message || "Registration failed");
       }
-      setLoading(false);
-      Swal.fire({
-        title: "Account Created",
-        text: "Your Account Has Been Successfully Created.",
-        confirmButtonText: "OK",
-        confirmButtonColor: "#28a0b5",
-      }).then(() => {
-        navigate("/sign-in");
+
+      const employeeId = response.data?.user?.employeeId;
+
+      await Swal.fire({
+        title: "Registration Successful!",
+        html: `Your account has been created successfully.<br><strong>Employee ID:</strong> ${employeeId}`,
+        icon: "success",
+        confirmButtonText: "Continue to Login",
       });
+
+      navigate("/sign-in");
     } catch (error) {
       Swal.fire({
         title: "Registration Failed",
-        text: error.message || "Something Went Wrong.",
-        confirmButtonText: "OK",
-        confirmButtonColor: "red",
+        text: error.message || "An error occurred during registration",
+        icon: "error",
+        confirmButtonText: "Try Again",
       });
     } finally {
       setLoading(false);
@@ -81,30 +98,31 @@ const SignUp = () => {
 
   return (
     <div className="flex min-h-screen">
-      <div className="flex flex-col md:flex-row m-auto border-2 p-10 mx-auto gap-5 max-w-6xl rounded-xl border-cyan-500">
-        {/* Left */}
+      <div className="flex flex-col md:flex-row m-auto border-2 p-10 mx-auto gap-5 max-w-6xl rounded-xl border-cyan-500 py-4">
+        {/* Left Column */}
         <div className="flex flex-col md:w-1/2 items-center justify-center mx-8">
+          <p className="text-3xl mb-5 text-center font-serif text-cyan-500">
+            REGISTRATION FORM
+          </p>
           <img src={logo} className="h-28 sm:h-48" alt="Company Logo" />
           <h1 className="text-3xl mt-5 text-center font-serif text-cyan-500">
-            TALENT TREK
+            EMPLOYEE ATTENDANCE
           </h1>
           <p className="text-lg mt-5 text-center font-serif">
-            - Revolutionizing IT recruitment through AI-driven precision,
-            connecting talent with opportunity like never before. -
+            Efficient employee management system with attendance tracking
           </p>
         </div>
 
-        {/* Right */}
+        {/* Right Column */}
         <div className="flex flex-col md:w-1/2">
           <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
             {/* Full Name */}
             <div>
-              <Label value="Full Name :" />
+              <Label htmlFor="fullName" value="Full Name" />
               <TextInput
-                type="text"
-                placeholder="Enter Full Name"
                 id="fullName"
-                className="mt-1"
+                type="text"
+                placeholder="Full Name"
                 required
                 value={formData.fullName}
                 onChange={handleChange}
@@ -113,116 +131,137 @@ const SignUp = () => {
 
             {/* Email */}
             <div>
-              <Label value="Email :" />
+              <Label htmlFor="email" value="Email" />
               <TextInput
-                type="email"
-                placeholder="Enter Email Address"
                 id="email"
-                className="mt-1"
+                type="email"
+                placeholder="john@example.com"
                 required
                 value={formData.email}
                 onChange={handleChange}
               />
             </div>
 
-            {/* Profile Type Selection */}
+            {/* Profile Type */}
             <div>
-              <Label value="Profile Type :" />
+              <Label htmlFor="profileType" value="Profile Type" />
               <Select
                 id="profileType"
-                className="mt-1"
+                required
                 value={formData.profileType}
                 onChange={handleChange}
-                required
               >
-                <option value="Job Seeker">Job Seeker</option>
-                <option value="Recruiter">Recruiter</option>
+                <option value="employee">Employee</option>
+                <option value="admin">Admin</option>
               </Select>
             </div>
 
-            {/* Password Field */}
+            <div className="flex flex-row gap-4">
+              {/* Gender */}
+              <div className="w-full">
+                <Label htmlFor="gender" value="Gender" />
+                <Select
+                  id="gender"
+                  required
+                  value={formData.gender}
+                  onChange={handleChange}
+                >
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </Select>
+              </div>
+
+              {/* Birthday */}
+              <div className="w-full">
+                <Label htmlFor="birthday" value="Birthday" />
+                <TextInput
+                  id="birthday"
+                  type="date"
+                  required
+                  value={formData.birthday}
+                  onChange={handleChange}
+                  max={new Date().toISOString().split("T")[0]} // Prevent future dates
+                />
+              </div>
+            </div>
+            {/* Password */}
             <div>
-              <Label value="Password :" />
+              <Label htmlFor="password" value="Password" />
               <div className="relative">
                 <TextInput
-                  type={showPassword ? "text" : "password"}
-                  placeholder="Enter Password"
                   id="password"
-                  className="mt-1"
+                  type={showPassword ? "text" : "password"}
+                  placeholder="••••••••"
                   required
+                  minLength="8"
                   value={formData.password}
                   onChange={handleChange}
                 />
-                <div className="relative bottom-11">
-                  <button
-                    type="button"
-                    className="absolute top-3 right-3 text-gray-600"
-                    onClick={() => setShowPassword(!showPassword)}
-                  >
-                    {showPassword ? (
-                      <HiEyeOff size={20} />
-                    ) : (
-                      <HiEye size={20} />
-                    )}
-                  </button>
-                </div>
+                <button
+                  type="button"
+                  className="absolute right-3 top-3 text-gray-500"
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? <HiEyeOff size={20} /> : <HiEye size={20} />}
+                </button>
               </div>
             </div>
 
-            {/* Confirm Password Field */}
+            {/* Confirm Password */}
             <div>
-              <Label value="Confirm Password :" />
+              <Label htmlFor="confirmPassword" value="Confirm Password" />
               <div className="relative">
                 <TextInput
-                  type={showConfirmPassword ? "text" : "password"}
-                  placeholder="Confirm Password"
                   id="confirmPassword"
-                  className="mt-1"
+                  type={showConfirmPassword ? "text" : "password"}
+                  placeholder="••••••••"
                   required
+                  minLength="8"
                   value={formData.confirmPassword}
                   onChange={handleChange}
                 />
-                <div className="relative bottom-11">
-                  <button
-                    type="button"
-                    className="absolute top-3 right-3 text-gray-600"
-                    onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                  >
-                    {showConfirmPassword ? (
-                      <HiEyeOff size={20} />
-                    ) : (
-                      <HiEye size={20} />
-                    )}
-                  </button>
-                </div>
+                <button
+                  type="button"
+                  className="absolute right-3 top-3 text-gray-500"
+                  onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                >
+                  {showConfirmPassword ? (
+                    <HiEyeOff size={20} />
+                  ) : (
+                    <HiEye size={20} />
+                  )}
+                </button>
               </div>
-            </div>
-
-            {/* Password Match Error */}
-            {formSubmitted && passwordMatchError && (
-              <Alert color="failure" className="mt-4 py-2">
-                <p className="text-red-700 font-semibold text-sm">
+              {passwordMatchError && (
+                <p className="mt-1 text-sm text-red-600">
                   {passwordMatchError}
                 </p>
-              </Alert>
-            )}
+              )}
+            </div>
 
             {/* Submit Button */}
             <Button
-              gradientMonochrome="info"
               type="submit"
-              className="mt-2"
-              disabled={loading || !!passwordMatchError}
+              gradientMonochrome="info"
+              disabled={loading || passwordMatchError}
+              className="mt-4"
             >
-              {loading ? <Spinner size="sm" /> : "Sign Up"}
+              {loading ? (
+                <>
+                  <Spinner size="sm" />
+                  <span className="pl-3">Processing...</span>
+                </>
+              ) : (
+                "Register"
+              )}
             </Button>
           </form>
 
-          {/* Redirect to Sign In */}
-          <div className="flex gap-2 text-sm mt-5 font-serif justify-center">
-            <span>Already have an account?</span>
-            <Link to="/sign-in" className="text-cyan-500">
-              Sign In
+          <div className="mt-4 text-center text-sm">
+            <span>Already have an account? </span>
+            <Link to="/sign-in" className="text-cyan-600 hover:underline">
+              Sign in
             </Link>
           </div>
         </div>

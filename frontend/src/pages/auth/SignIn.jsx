@@ -1,13 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
 import { loginSuccess } from "../../redux/auth/authSlice";
 import { Button, Label, Spinner, TextInput } from "flowbite-react";
 import Swal from "sweetalert2";
 import logo from "../../assets/public/logo.png";
-import userService from "../../services/userService";
+import authService from "../../services/authService";
 
 const Signin = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -15,42 +14,49 @@ const Signin = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  // Handle Input Field Changes
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
-  // Handle Form Submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!formData.email || !formData.password) {
+      Swal.fire({
+        title: "Missing Fields",
+        text: "Please enter both email and password",
+        icon: "warning",
+        confirmButtonText: "OK",
+      });
+      return;
+    }
+
     setLoading(true);
 
     try {
-      const response = await userService.login(formData);
+      const response = await authService.login(formData);
 
       if (response.success) {
-        // Store in Redux
         dispatch(
           loginSuccess({
             token: response.data.token,
             user: response.data.user,
           })
         );
-        navigate("/");
-      } else {
-        Swal.fire({
-          title: "Login Failed",
-          text: response.message || "Something Went Wrong.",
-          confirmButtonText: "OK",
-          confirmButtonColor: "red",
+
+        await Swal.fire({
+          title: "Login Successful!",
+          text: `Welcome back, ${response.data.user.name}!`,
+          icon: "success",
+          confirmButtonText: "Continue",
         });
+        navigate("/");
       }
     } catch (error) {
       Swal.fire({
         title: "Login Failed",
-        text: error.message || "Something Went Wrong.",
-        confirmButtonText: "OK",
-        confirmButtonColor: "red",
+        text: error.message,
+        icon: "error",
+        confirmButtonText: "Try Again",
       });
     } finally {
       setLoading(false);
@@ -64,67 +70,78 @@ const Signin = () => {
         <div className="flex flex-col md:w-1/2 items-center justify-center mx-8">
           <img src={logo} className="h-28 sm:h-48" alt="Company Logo" />
           <h1 className="text-3xl mt-5 text-center font-serif text-cyan-500">
-            JOB HORIZEN
+            EMPLOYEE ATTENDANCE
           </h1>
           <p className="text-lg mt-5 text-center font-serif">
-            - Revolutionizing IT recruitment through AI-driven precision,
-            connecting talent with opportunity like never before. -
+            Efficient employee management system with attendance tracking
           </p>
         </div>
 
         {/* Right Section */}
         <div className="flex flex-col md:w-1/2">
-          <div className="text-3xl mb-3 text-center font-serif text-cyan-500">
-            Login Your Account
-          </div>
-          <hr className="shadow-lg mb-4" />
+          <h2 className="text-2xl font-bold mb-6 text-center text-cyan-500">
+            SIGN IN
+          </h2>
 
           <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
             <div>
-              <Label value="Email :" />
+              <Label htmlFor="email" value="Email" />
               <TextInput
                 type="email"
-                placeholder="Enter Email Address"
+                placeholder="your@email.com"
                 id="email"
-                className="mt-1"
                 required
                 value={formData.email}
                 onChange={handleChange}
               />
             </div>
+
             <div>
-              <Label value="Password :" />
+              <Label htmlFor="password" value="Password" />
               <TextInput
                 type="password"
-                placeholder="Enter Password"
+                placeholder="••••••••"
                 id="password"
-                className="mt-1"
                 required
+                minLength="8"
                 value={formData.password}
                 onChange={handleChange}
               />
             </div>
+
+            <div className="flex justify-end">
+              <Link
+                to="/forgot-password"
+                className="text-sm text-cyan-600 hover:underline"
+              >
+                Forgot password?
+              </Link>
+            </div>
+
             <Button
-              gradientMonochrome="info"
               type="submit"
-              className="mt-4"
+              gradientMonochrome="info"
               disabled={loading}
+              className="mt-2"
             >
-              {loading ? <Spinner size="sm" /> : null}
-              <span className="pl-3">
-                {loading ? "Logging in..." : "Login"}
-              </span>
-            </Button>
-            <Button type="button" gradientMonochrome="info" outline>
-              <FcGoogle className="w-6 h-6 mr-2" />
-              Continue with Google
+              {loading ? (
+                <>
+                  <Spinner size="sm" />
+                  <span className="pl-3">Signing in...</span>
+                </>
+              ) : (
+                "Sign In"
+              )}
             </Button>
           </form>
 
-          <div className="flex gap-2 text-sm mt-5 font-serif justify-center">
-            <span>Don't have an account?</span>
-            <Link to="/sign-up" className="text-cyan-500">
-              Sign Up
+          <div className="mt-6 text-center text-sm">
+            <span>Don't have an account? </span>
+            <Link
+              to="/sign-up"
+              className="text-cyan-600 hover:underline font-medium"
+            >
+              Sign up
             </Link>
           </div>
         </div>

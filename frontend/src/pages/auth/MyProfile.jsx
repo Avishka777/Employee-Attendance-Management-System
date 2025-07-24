@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { loginSuccess, logout } from "../../redux/auth/authSlice";
-import { Button, FileInput, Label, Spinner, TextInput } from "flowbite-react";
+import { loginSuccess } from "../../redux/auth/authSlice";
+import { Button, Label, Select, Spinner, TextInput } from "flowbite-react";
 import Swal from "sweetalert2";
 import userService from "../../services/userService";
 
@@ -10,193 +10,144 @@ const MyProfile = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { token, user } = useSelector((state) => state.auth);
-  const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
-    profileType: "",
+    gender: "male",
+    birthday: "",
   });
 
-  // Fetch User Profile
+  // Fetch user data on component mount
   useEffect(() => {
-    if (!token) return;
-    setLoading(true);
+    if (!token || !user) {
+      navigate("/sign-in");
+      return;
+    }
 
-    const fetchProfile = async () => {
-      try {
-        const response = await userService.getProfile(token);
-        setFormData({
-          fullName: response.data.fullName,
-          email: response.data.email,
-          profileType: response.data.profileType,
-        });
-        dispatch(loginSuccess({ token, user: response.data }));
-      } catch (error) {
-        console.error("Error Fetching Profile.", error);
-      } finally {
-        setLoading(false);
-      }
-    };
+    setFormData({
+      fullName: user.name || "",
+      email: user.email || "",
+      gender: user.gender || "male",
+      birthday: user.birthday ? user.birthday.split("T")[0] : "",
+    });
+  }, [token, user, navigate]);
 
-    fetchProfile();
-  }, [token, dispatch]);
-
-  // Handle Input Change
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Handle File Selection
-  const handleFileChange = (e) => {
-    setFile(e.target.files[0]);
-  };
-
-  // Handle Profile Update
-  const handleUpdateProfile = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+
     try {
-      const updatedUser = await userService.updateProfile(
-        formData,
-        file,
-        token
+      const updateData = {
+        name: formData.fullName,
+        email: formData.email,
+        gender: formData.gender,
+        birthday: formData.birthday,
+      };
+
+      await userService.updateProfile(user._id, updateData, token);
+
+      // Update Redux store with new user data
+      dispatch(
+        loginSuccess({
+          token,
+          user: {
+            ...user,
+            ...updateData,
+          },
+        })
       );
-      dispatch(loginSuccess({ token, user: updatedUser.data }));
-      if (updatedUser.success) {
-        return Swal.fire({
-          title: "Profile Updated",
-          text:
-            updatedUser.message ||
-            "Your Profile Has Been Successfully Updated.",
-          confirmButtonText: "OK",
-          confirmButtonColor: "#28a0b5",
-        });
-      } else {
-        Swal.fire({
-          title: "Login Failed",
-          text: updatedUser.message || "Something Went Wrong",
-          confirmButtonText: "OK",
-          confirmButtonColor: "red",
-        });
-      }
+      Swal.fire({
+        title: "Success!",
+        text: "Profile updated successfully",
+        icon: "success",
+      });
     } catch (error) {
       Swal.fire({
-        title: "Update Failed",
-        text: "Something Went Wrong While Updating Your Profile.",
-        confirmButtonColor: "red",
+        title: "Error",
+        text: error.message || "Failed to update profile",
+        icon: "error",
       });
     } finally {
       setLoading(false);
     }
   };
 
-  // Handle Profile Deletion
-  const handleDeleteProfile = async () => {
-    Swal.fire({
-      title: "Are you sure?",
-      text: "This action will permanently delete your account.",
-      showCancelButton: true,
-      confirmButtonColor: "red",
-      cancelButtonColor: "#28a0b5",
-      confirmButtonText: "Yes Delete It",
-      cancelButtonText: "No Keep It",
-    }).then(async (result) => {
-      if (result.isConfirmed) {
-        try {
-          const deleteUser = await userService.deleteProfile(token);
-          dispatch(logout());
-          navigate("/");
-          Swal.fire({
-            title: "Deleted",
-            text: deleteUser.message || "Your Profile Has Been Deleted.",
-            confirmButtonColor: "#28a0b5",
-          });
-        } catch (error) {
-          Swal.fire({
-            title: "Deletion Failed",
-            text:
-              error.message ||
-              "Something Went Wrong While Deleting Your Profile.",
-            confirmButtonColor: "red",
-          });
-        }
-      }
-    });
-  };
+  if (!user) {
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <Spinner size="xl" />
+      </div>
+    );
+  }
 
   return (
-    <div className="flex min-h-screen">
-      <div className="flex flex-col md:flex-row m-auto border-2 p-10 mx-auto gap-5 min-w-6xl rounded-xl border-cyan-500">
-        {/* Left Section */}
-        <div className="flex flex-col md:w-1/2 items-center justify-center mx-8">
-          <img
-            src={user?.profilePicture}
-            className="h-auto sm:h-auto w-96 rounded-full"
-            alt="Company Logo"
-          />
-        </div>
+    <div className="container mx-auto px-4 py-8 max-w-2xl min-h-screen mt-16">
+      <div className="rounded-lg shadow-md p-6 border border-cyan-500">
+        <h1 className="text-2xl font-bold text-cyan-600 mb-6">My Profile</h1>
 
-        {/* Right Section */}
-        <div className="flex flex-col md:w-1/2">
-          <div className="text-3xl mb-3 text-center font-serif text-cyan-500">
-            Update Profile Details
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <Label htmlFor="fullName" value="Full Name" />
+            <TextInput
+              id="fullName"
+              name="fullName"
+              value={formData.fullName}
+              onChange={handleChange}
+              required
+            />
           </div>
-          <hr className="shadow-lg mb-4" />
 
-          <form className="flex flex-col gap-4" onSubmit={handleUpdateProfile}>
-            <div>
-              <Label value="Email :" />
-              <TextInput
-                type="text"
-                name="fullName"
-                value={formData.fullName}
-                onChange={handleChange}
-                className="mt-1"
-                placeholder="Full Name"
-              />
-            </div>
-            <div>
-              <Label value="Email :" />
-              <TextInput
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className="mt-1"
-                placeholder="Email"
-              />
-            </div>
-            <div>
-              <Label value="Change Profile Picture :" />
-              <FileInput
-                type="file"
-                onChange={handleFileChange}
-                className="mt-1"
-              />
-            </div>
-            <div className="flex gap-4 mt-4">
-              <Button
-                gradientMonochrome="info"
-                type="submit"
-                className="w-full"
-                disabled={loading}
-              >
-                {loading ? <Spinner size="sm" /> : null}
-                <span className="pl-3">
-                  {loading ? "Updating..." : "Update Profile"}
-                </span>
-              </Button>
-              <Button
-                onClick={handleDeleteProfile}
-                gradientMonochrome="failure"
-                className="w-full"
-              >
-                Delete Profile
-              </Button>
-            </div>
-          </form>
-        </div>
+          <div>
+            <Label htmlFor="email" value="Email" />
+            <TextInput
+              id="email"
+              name="email"
+              type="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div>
+            <Label htmlFor="gender" value="Gender" />
+            <Select
+              id="gender"
+              name="gender"
+              value={formData.gender}
+              onChange={handleChange}
+              required
+            >
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </Select>
+          </div>
+
+          <div>
+            <Label htmlFor="birthday" value="Birthday" />
+            <TextInput
+              id="birthday"
+              name="birthday"
+              type="date"
+              value={formData.birthday}
+              onChange={handleChange}
+              required
+              max={new Date().toISOString().split("T")[0]}
+            />
+          </div>
+
+          <div className="flex justify-end pt-4">
+            <Button type="submit" gradientMonochrome="info" disabled={loading}>
+              {loading ? <Spinner size="sm" /> : "Update Profile"}
+            </Button>
+          </div>
+        </form>
       </div>
     </div>
   );
