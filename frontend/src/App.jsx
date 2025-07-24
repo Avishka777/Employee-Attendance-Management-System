@@ -6,6 +6,7 @@ import Signin from "./pages/auth/SignIn";
 import Signup from "./pages/auth/SignUp";
 import MyProfile from "./pages/auth/MyProfile";
 import ProtectedRoute from "./components/public/ProtectedRoute";
+import AllUserList from "./pages/dashboard/AllUserList";
 
 function Layout() {
   const location = useLocation();
@@ -20,6 +21,8 @@ function Layout() {
         <Route path="/sign-in" element={<Signin />} />
         <Route path="/sign-up" element={<Signup />} />
         <Route path="/my-profile" element={<MyProfile />} />
+
+        <Route path="/dashboard/users" element={<AllUserList />} />
 
         {/* Protected Recruiter Routes */}
         <Route element={<ProtectedRoute allowedRoles={["Admin"]} />}>

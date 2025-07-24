@@ -1,10 +1,10 @@
+import logo from "../../assets/public/logo.png";
 import { FaSun, FaMoon } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { logout } from "../../redux/auth/authSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleTheme } from "../../redux/theme/themeSlice";
 import { Avatar, Button, Dropdown, Navbar } from "flowbite-react";
-import logo from "../../assets/public/logo.png";
 
 export default function HeaderComponent() {
   const navigate = useNavigate();
@@ -66,10 +66,8 @@ export default function HeaderComponent() {
             <Dropdown.Item onClick={() => navigate(`/my-profile`)}>
               My Profile
             </Dropdown.Item>
-            {user && (
-              <Dropdown.Item
-                onClick={() => navigate(`/dashboard/resume/analyse`)}
-              >
+            {user?.role === "admin" && (
+              <Dropdown.Item onClick={() => navigate(`/dashboard/users`)}>
                 Dashboard
               </Dropdown.Item>
             )}

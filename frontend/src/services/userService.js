@@ -1,6 +1,26 @@
 import axios from "axios";
 
 const userService = {
+  getAllUsers: async (token) => {
+    try {
+      const response = await axios.get(
+        `${import.meta.env.VITE_API_BASE_URL}users`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      return response.data;
+    } catch (error) {
+      throw (
+        error.response?.data || {
+          success: false,
+          message: "Failed to fetch users",
+        }
+      );
+    }
+  },
   // Update user profile
   updateProfile: async (userId, userData, token) => {
     try {
@@ -9,17 +29,19 @@ const userService = {
         userData,
         {
           headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
-          }
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
         }
       );
       return response.data;
     } catch (error) {
-      throw error.response?.data || {
-        success: false,
-        message: "Profile update failed"
-      };
+      throw (
+        error.response?.data || {
+          success: false,
+          message: "Profile update failed",
+        }
+      );
     }
   },
 
@@ -30,18 +52,20 @@ const userService = {
         `${import.meta.env.VITE_API_BASE_URL}users/${userId}`,
         {
           headers: {
-            Authorization: `Bearer ${token}`
-          }
+            Authorization: `Bearer ${token}`,
+          },
         }
       );
       return response.data;
     } catch (error) {
-      throw error.response?.data || {
-        success: false,
-        message: "Profile deletion failed"
-      };
+      throw (
+        error.response?.data || {
+          success: false,
+          message: "Profile deletion failed",
+        }
+      );
     }
-  }
+  },
 };
 
 export default userService;
