@@ -55,3 +55,20 @@
 [2025-07-24 11:13:50.781 AM] [31merror[39m: 	[31mUser no longer exists[39m
 [2025-07-24 11:13:55.420 AM] [31merror[39m: 	[31mUser no longer exists[39m
 [2025-07-24 11:14:19.242 AM] [31merror[39m: 	[31mUser no longer exists[39m
+[2025-07-24 11:34:45.436 AM] [31merror[39m: 	[31mjwt malformed[39m
+[2025-07-24 11:35:04.599 AM] [31merror[39m: 	[31mjwt malformed[39m
+[2025-07-24 11:39:25.418 AM] [31merror[39m: 	[31mAlready checked in today[39m
+[2025-07-24 11:43:34.525 AM] [31merror[39m: 	[31mAlready checked in today[39m
+[2025-07-24 11:44:12.000 AM] [31merror[39m: 	[31mjwt malformed[39m
+[2025-07-24 12:07:33.499 PM] [31merror[39m: 	[31mAlready checked in today[39m
+[2025-07-24 12:07:41.420 PM] [31merror[39m: 	[31mEmployee not found[39m
+[2025-07-24 12:07:46.393 PM] [31merror[39m: 	[31mAlready checked in today[39m
+[2025-07-24 12:09:01.913 PM] [31merror[39m: 	[31mUser no longer exists[39m
+[2025-07-24 12:45:53.392 PM] [31merror[39m: 	[31mUser no longer exists[39m
+[2025-07-24 12:46:07.158 PM] [31merror[39m: 	[31mEmail already in use[39m
+[2025-07-24 12:46:33.310 PM] [31merror[39m: 	[31mUser no longer exists[39m
+[2025-07-24 12:50:35.183 PM] [31merror[39m: 	[31mYou cannot delete your own account[39m
+[2025-07-24 12:50:51.151 PM] [31merror[39m: 	[31mYou cannot delete your own account[39m
+[2025-07-24 03:16:39.492 PM] [31merror[39m: 	[31mAlready checked in today[39m
+[2025-07-24 03:16:45.911 PM] [31merror[39m: 	[31mAlready checked in today[39m
+[2025-07-24 03:24:23.142 PM] [31merror[39m: 	[31mAlready checked in today[39m
